@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+typing
+seaborn 
+sklearn
+imblearn
+xgboost
+pymongo
+jupyter
+ipykernel
+python-dotenv
+-e .
