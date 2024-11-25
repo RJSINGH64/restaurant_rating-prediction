@@ -1,11 +1,13 @@
 import pandas as pd
 import numpy as np 
 from src.config import mongo_client
+from src.excepton import SrcException
+import dill
+import yaml
 from src.logger import logging
-from data_dump import database_name , collection_name
 import os,sys
 
-def get_collection_as_dataframe():
+def get_collection_as_dataframe(database_name , collection_name):
     """
     ===================================================================
     ThisFuntion is used to export Data from MongoDB and Convert it into Dataframe
@@ -30,4 +32,30 @@ def get_collection_as_dataframe():
     except Exception as e:
         print(e,sys)
 
+
+def write_yaml_file(file_path,data:dict):
+    try:
+        file_dir = os.path.dirname(file_path)
+        os.makedirs(file_dir,exist_ok=True)
+        with open(file_path,"w") as file_writer:
+            yaml.dump(data,file_writer)
+    except Exception as e:
+        raise SrcException(e, sys)
+    
+
+def convert_columns_float(df: pd.DataFrame, exclude_columns: list) -> pd.DataFrame:
+    try:
+        for column in df.columns:
+            if column not in exclude_columns:
+                if df[column].dtype == 'object':  # Check if it's a string
+                    logging.info(f"Skipping conversion for non-numeric column: {column}")
+                    continue  # Skip non-numeric columns
+
+                try:
+                    df[column] = df[column].astype('float')
+                except ValueError as e:
+                    logging.warning(f"Column '{column}' could not be converted to float: {e}")
+        return df
+    except Exception as e:
+        raise e
 

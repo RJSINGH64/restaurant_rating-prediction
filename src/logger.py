@@ -25,3 +25,4 @@ logging.basicConfig(
 logging.getLogger("matplotlib").setLevel(logging.WARNING)
 logging.getLogger("pymongo").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING) 
+logging.getLogger("numexpr.utils").setLevel(logging.WARNING) 

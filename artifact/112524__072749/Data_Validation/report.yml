@@ -1,0 +1,53 @@
+data_drift_within_test_dataset:
+  approx_cost:
+    pvalues: 0.9666156520916526
+    same_distribution: true
+  book_table:
+    pvalues: 1.0
+    same_distribution: true
+  cuisines:
+    pvalues: 1.0
+    same_distribution: true
+  location:
+    pvalues: 0.9999999999998995
+    same_distribution: true
+  online_order:
+    pvalues: 0.8382681717370433
+    same_distribution: true
+  rate:
+    pvalues: 0.5441802586546711
+    same_distribution: true
+  rest_type:
+    pvalues: 1.0
+    same_distribution: true
+  votes:
+    pvalues: 0.9466985509839178
+    same_distribution: true
+data_drift_within_train_dataset:
+  approx_cost:
+    pvalues: 0.9999979727460212
+    same_distribution: true
+  book_table:
+    pvalues: 0.7631759637381037
+    same_distribution: true
+  cuisines:
+    pvalues: 1.0
+    same_distribution: true
+  location:
+    pvalues: 0.32172678901950974
+    same_distribution: true
+  online_order:
+    pvalues: 0.9913152336705655
+    same_distribution: true
+  rate:
+    pvalues: 0.9846281495109334
+    same_distribution: true
+  rest_type:
+    pvalues: 0.9899875345955507
+    same_distribution: true
+  votes:
+    pvalues: 0.9999905851951946
+    same_distribution: true
+missing_values_within_base_dataset: []
+missing_values_within_test_dataset: []
+missing_values_within_train_dataset: []

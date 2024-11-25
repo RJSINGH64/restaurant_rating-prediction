@@ -4,7 +4,7 @@ import os ,sys
 
 database_name = "Zomato"
 collection_name="Restaurant"
-file_path=os.path.join(os.getcwd() ,"dataset/zomato.csv")
+file_path=os.path.join(os.getcwd() ,"dataset/cleaned_zomato.csv") #cleaned dataset inside researcj.ipynb file
 ##dataset link :-   https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants
 
 #creating  a funtion to dump dataset into mongodb database
@@ -18,4 +18,5 @@ if __name__=="__main__":
 
     #dumping data into MongoDB database
     mongo_client[database_name][collection_name].insert_many(data_dict)
+    print(f' Data Sucessfully Dumped inside MongoDB Atlas Database')
 
